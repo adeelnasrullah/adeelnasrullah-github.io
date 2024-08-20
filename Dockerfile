@@ -29,6 +29,8 @@ ADD Gemfile /srv/jekyll
 
 WORKDIR /srv/jekyll
 
+RUN bundle lock --add-platform x86_64-linux
+
 # install jekyll and dependencies
 RUN gem install jekyll bundler
 
