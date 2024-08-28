@@ -33,6 +33,9 @@ WORKDIR /srv/jekyll
 RUN gem install jekyll bundler
 
 RUN bundle install --no-cache
+
+# removing github error, likely becuase the remote server is running x86-64
+RUN bundle lock --add-platform x86_64-linux
 # && rm -rf /var/lib/gems/3.1.0/cache
 EXPOSE 8080
 
