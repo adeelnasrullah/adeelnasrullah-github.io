@@ -29,6 +29,9 @@ ADD Gemfile /srv/jekyll
 
 WORKDIR /srv/jekyll
 
+# removing github error, likely becuase the remote server is running x86-64
+RUN bundle lock --add-platform x86_64-linux
+
 # install jekyll and dependencies
 RUN gem install jekyll bundler
 
