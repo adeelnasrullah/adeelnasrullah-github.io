@@ -1,6 +1,14 @@
 ---
 layout: default
 ---
+
+<div class="post">
+  <article>
+    <embed src="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url}}" width="{{ site.max_width }}" height="1200px" />
+  </article>
+</div>
+
+{% comment %} 
 {% unless site.data.resume %}
   <div class="post">
     <header class="post-header">
@@ -115,3 +123,4 @@ layout: default
     </article>
   </div>
 {% endunless %}
+{% endcomment %} 
